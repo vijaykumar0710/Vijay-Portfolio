@@ -5,9 +5,11 @@ const Home = () => {
   return (
     <div 
       id="home" 
-      // CHANGED: Increased pt-20 to pt-40 to force content down below the navbar
-      // Also kept min-h-screen to ensure full height
-      className="min-h-screen flex flex-col justify-center items-center bg-[#0a192f] text-gray-300 px-6 pt-40 sm:pt-20"
+      // FIX EXPLAINED:
+      // 1. 'justify-start': On mobile, we align content to the TOP, not center. This prevents it from floating up.
+      // 2. 'pt-32': We add 128px of padding on top. Since Navbar is 80px, this guarantees a 48px gap below it.
+      // 3. 'md:justify-center' & 'md:pt-0': On Desktop, we switch back to centering because screens are tall enough.
+      className="min-h-screen flex flex-col justify-start md:justify-center items-center bg-[#0a192f] text-gray-300 px-6 pt-32 md:pt-0"
     >
       <div className="max-w-4xl text-center animate-fade-in-up">
         
@@ -16,7 +18,7 @@ const Home = () => {
           Hi, my name is
         </p>
 
-        {/* Name - Adjusted size and margin */}
+        {/* Name */}
         <h1 className="text-4xl sm:text-7xl font-bold text-gray-100 mb-6 leading-tight">
           VIJAY KUMAR
         </h1>
