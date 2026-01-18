@@ -55,14 +55,14 @@ const Work = () => {
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-100 mr-6 flex items-center gap-4">
                     <FaBriefcase className="text-cyan-400" /> Experience
                 </h2>
-                <div className="h-[1px] bg-gray-600 flex-grow max-w-[200px]"></div>
+                <div className="h-1px bg-gray-600 grow max-w-50"></div>
             </div>
 
             <div className="space-y-12">
                 {experiences.map((exp, index) => (
                     // Responsive Flex: Column on mobile, Row on desktop
                     <div key={index} className="flex flex-col md:flex-row gap-4 md:gap-10 border-l-2 border-gray-700 pl-6 ml-2 relative">
-                        <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyan-400"></div>
+                        <div className="absolute -left-2.25 top-0 w-4 h-4 rounded-full bg-cyan-400"></div>
                         
                         <div className="md:w-1/4 shrink-0">
                              <div className="flex items-center gap-2 text-sm font-mono mb-2 text-gray-400">
@@ -100,7 +100,7 @@ const Work = () => {
                 <h2 className="text-3xl sm:text-4xl font-bold text-gray-100 mr-6 flex items-center gap-4">
                     <FaFolder className="text-cyan-400" /> Projects
                 </h2>
-                <div className="h-[1px] bg-gray-600 flex-grow max-w-[200px]"></div>
+                <div className="h-1px bg-gray-600 grow max-w-50"></div>
             </div>
 
             {/* Grid: 1 col on mobile, 2 on tablet, 3 on desktop */}

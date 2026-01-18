@@ -55,7 +55,7 @@ const Skills = () => {
            <h2 className="text-3xl sm:text-4xl font-bold text-gray-100 mr-4">
              <span className="text-cyan-400 font-mono text-2xl mr-2"></span> Technical Skills
            </h2>
-           <div className="h-[1px] bg-gray-600 flex-grow max-w-[200px]"></div>
+           <div className="h-1px bg-gray-600 grow max-w-50"></div>
         </div>
 
         {/* Responsive Grid: 1 Column on Mobile, 2 on Tablet, 3 on Desktop */}

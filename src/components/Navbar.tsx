@@ -54,7 +54,7 @@ const Navbar = () => {
           </li>
         ))}
         
-        <div className="h-8 w-[1px] bg-gray-600 mx-2"></div>
+        <div className="h-8 w-1px bg-gray-600 mx-2"></div>
 
         <div className="flex gap-4">
           {profilesLinks.map((link) => (
