@@ -1,4 +1,4 @@
-import { FaGithub, FaExternalLinkAlt, FaFolder, FaBriefcase, FaCalendarAlt } from 'react-icons/fa';
+import { FaGithub, FaFolder, FaBriefcase, FaCalendarAlt } from 'react-icons/fa';
 
 const Work = () => {
   const experiences = [
@@ -34,14 +34,14 @@ const Work = () => {
       description: 'A full-stack AI text-to-image generator. Features credit system, Stripe payments, and Clipdrop API.',
       techStack: ['MERN', 'Stripe', 'Redux'],
       githubLink: 'https://github.com/vijaykumar0710', 
-      liveLink: '#',
+      
     },
     {
       title: 'Brainly - Second Brain',
       description: 'Content aggregation platform for links and tweets. Features RESTful APIs and content sharing.',
       techStack: ['TypeScript', 'MongoDB', 'React'],
       githubLink: 'https://github.com/vijaykumar0710',
-      liveLink: '#',
+      
     },
   ];
 
@@ -111,7 +111,6 @@ const Work = () => {
                         <FaFolder className="text-4xl text-cyan-400" />
                         <div className="flex gap-4 text-gray-300">
                             <a href={project.githubLink} target="_blank" className="hover:text-cyan-400"><FaGithub size={22} /></a>
-                            <a href={project.liveLink} target="_blank" className="hover:text-cyan-400"><FaExternalLinkAlt size={20} /></a>
                         </div>
                     </div>
                     <div>
