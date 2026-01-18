@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+/* Add this block below the import */
+html {
+  /* 1. Enables the smooth sliding animation */
+  scroll-behavior: smooth;
+
+  /* 2. Prevents your fixed Navbar from covering the section title */
+  /* This 80px matches your Navbar height */
+  scroll-padding-top: 80px;
+}
