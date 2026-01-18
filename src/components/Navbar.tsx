@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FaCode, FaTimes, FaBars, FaLinkedin } from "react-icons/fa"; // Added FaLinkedin
+import { FaCode, FaTimes, FaBars, FaLinkedin } from "react-icons/fa";
 import { SiCodeforces, SiLeetcode } from "react-icons/si";
 
 const Navbar = () => {
@@ -17,7 +17,7 @@ const Navbar = () => {
   const profilesLinks = [
     {
       title: 'LinkedIn',
-      href: 'https://www.linkedin.com/in/vijay-kumar-profile/', // Update with your actual URL
+      href: 'https://www.linkedin.com/in/vijay-kumar-profile/', // REPLACE WITH YOUR REAL LINK
       icon: <FaLinkedin size={30} />
     },
     {
@@ -33,21 +33,20 @@ const Navbar = () => {
   ];
 
   return (
-    // Fixed height (h-20), Background color added, z-index maintained
     <nav className="fixed w-full h-20 flex justify-between items-center px-6 bg-[#0a192f] text-gray-300 z-50 shadow-md">
 
-      {/* Logo - Click to Scroll Top */}
+      {/* Logo */}
       <a 
         href="#home"
         onClick={() => setIsOpen(false)}
         className="z-50 cursor-pointer hover:text-cyan-400 transition-colors duration-300"
       >
-        <h1 className="text-3xl font-serif flex items-center gap-2">
+        <h1 className="text-2xl sm:text-3xl font-serif flex items-center gap-2">
           <FaCode /> Portfolio
         </h1>
       </a>
       
-      {/* Desktop Menu */}
+      {/* Desktop Menu (Hidden on Mobile) */}
       <ul className="hidden md:flex items-center gap-8 text-xl font-serif">
         {navLinks.map((link) => (
           <li key={link.title} className="hover:text-cyan-400 font-medium cursor-pointer transition-colors">
@@ -55,10 +54,8 @@ const Navbar = () => {
           </li>
         ))}
         
-        {/* Divider */}
         <div className="h-8 w-[1px] bg-gray-600 mx-2"></div>
 
-        {/* Profile Icons */}
         <div className="flex gap-4">
           {profilesLinks.map((link) => (
             <a 
@@ -67,7 +64,6 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="transition-transform hover:scale-110 hover:text-cyan-400"
-              title={link.title}
             >
               {link.icon}
             </a>
@@ -75,7 +71,7 @@ const Navbar = () => {
         </div>
       </ul>
 
-      {/* Hamburger Icon */}
+      {/* Hamburger Icon (Visible on Mobile) */}
       <div 
         onClick={toggleMenu} 
         className="md:hidden z-50 cursor-pointer text-2xl hover:text-cyan-400"
@@ -84,32 +80,34 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Overlay */}
-      <ul 
-        className={`${
+      <div 
+        className={`fixed top-0 right-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } fixed top-0 right-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center transition-transform duration-300 ease-in-out md:hidden z-40`}
+        } md:hidden z-40`}
       >
-        {navLinks.map((link) => (
-          <li key={link.title} className="py-6 text-4xl font-serif hover:text-cyan-400">
-            <a href={link.href} onClick={toggleMenu}>{link.title}</a>
-          </li>
-        ))}
+        <ul className="flex flex-col gap-8 items-center">
+          {navLinks.map((link) => (
+            <li key={link.title} className="text-3xl font-serif hover:text-cyan-400">
+              <a href={link.href} onClick={toggleMenu}>{link.title}</a>
+            </li>
+          ))}
+        </ul>
 
         {/* Mobile Profile Links */}
-        <div className="flex gap-8 mt-10">
+        <div className="flex gap-8 mt-12">
           {profilesLinks.map((link) => (
             <a 
               key={link.title}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-4xl hover:text-cyan-400"
+              className="text-3xl hover:text-cyan-400"
             >
               {link.icon}
             </a>
           ))}
         </div>
-      </ul>
+      </div>
     </nav>
   );
 };

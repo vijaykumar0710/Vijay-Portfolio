@@ -1,12 +1,5 @@
-import { FaCode, FaLaptopCode, FaDatabase, FaTools, FaBrain } from 'react-icons/fa';
-import { 
-  SiCplusplus, SiJavascript, SiTypescript, SiHtml5, SiCss3, 
-  SiReact, SiVite, SiTailwindcss, 
-  SiNodedotjs, SiExpress, SiMongodb, SiMysql, 
-  SiGit, SiGithub, SiPostman 
-} from 'react-icons/si';
-
-// Ensure you have installed: npm install react-icons
+import { FaCode, FaLaptopCode, FaDatabase, FaTools} from 'react-icons/fa';
+import { SiCplusplus, SiJavascript, SiTypescript, SiHtml5, SiCss3, SiReact, SiVite, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiMysql, SiGit, SiGithub, SiPostman } from 'react-icons/si';
 import { VscVscode } from 'react-icons/vsc';
 
 const Skills = () => {
@@ -33,7 +26,7 @@ const Skills = () => {
       ]
     },
     {
-      title: "Backend & Databases",
+      title: "Backend",
       icon: <FaDatabase />,
       skills: [
         { name: "Node.js", icon: <SiNodedotjs className="text-[#339933]" /> },
@@ -51,63 +44,34 @@ const Skills = () => {
         { name: "Postman", icon: <SiPostman className="text-[#FF6C37]" /> },
         { name: "VS Code", icon: <VscVscode className="text-[#007ACC]" /> }
       ]
-    },
-    {
-      title: "Core Concepts",
-      icon: <FaBrain />,
-      skills: [
-        { name: "DSA", icon: <FaBrain className="text-pink-400" /> },
-        { name: "OOPs", icon: <FaCode className="text-purple-400" /> },
-        { name: "OS", icon: <FaLaptopCode className="text-orange-400" /> },
-        { name: "DBMS", icon: <FaDatabase className="text-green-400" /> }
-      ]
     }
   ];
 
   return (
-    <div 
-      id="skills" 
-      className="min-h-screen flex flex-col justify-center bg-[#0a192f] text-gray-300 px-6 sm:px-24 py-20"
-    >
+    <div id="skills" className="min-h-screen flex flex-col justify-center bg-[#0a192f] text-gray-300 px-6 sm:px-24 py-20">
       <div className="max-w-6xl mx-auto w-full">
         
-        {/* Section Heading */}
         <div className="flex items-center mb-16">
            <h2 className="text-3xl sm:text-4xl font-bold text-gray-100 mr-4">
-             <span className="text-cyan-400 font-mono text-2xl mr-2"></span> 
-             Technical Skills
+             <span className="text-cyan-400 font-mono text-2xl mr-2"></span> Technical Skills
            </h2>
-           <div className="h-1px bg-gray-600 grow max-w-75"></div>
+           <div className="h-[1px] bg-gray-600 flex-grow max-w-[200px]"></div>
         </div>
 
-        {/* Skills Grid */}
+        {/* Responsive Grid: 1 Column on Mobile, 2 on Tablet, 3 on Desktop */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillCategories.map((category, index) => (
-            <div 
-              key={index}
-              className="bg-[#112240] p-6 rounded shadow-lg hover:-translate-y-2 transition-transform duration-300 border-t-4 border-cyan-400/50 hover:border-cyan-400"
-            >
+            <div key={index} className="bg-[#112240] p-6 rounded shadow-lg border-t-4 border-cyan-400/50 hover:border-cyan-400 transition-colors">
               
-              {/* Category Header */}
               <div className="flex items-center gap-3 mb-6">
-                <span className="text-cyan-400 text-3xl">
-                  {category.icon}
-                </span>
-                <h3 className="text-2xl font-bold text-gray-100">
-                  {category.title}
-                </h3>
+                <span className="text-cyan-400 text-2xl">{category.icon}</span>
+                <h3 className="text-xl font-bold text-gray-100">{category.title}</h3>
               </div>
 
-              {/* Skills List with Logos */}
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill) => (
-                  <div 
-                    key={skill.name}
-                    className="flex items-center gap-3 px-4 py-2 bg-cyan-900/30 text-cyan-300 text-lg font-mono rounded-full border border-cyan-900/50 hover:bg-cyan-900/50 transition-colors cursor-default"
-                  >
-                    <span className="text-2xl">
-                      {skill.icon}
-                    </span>
+                  <div key={skill.name} className="flex items-center gap-2 px-3 py-2 bg-cyan-900/30 text-cyan-300 text-sm font-mono rounded-full border border-cyan-900/50">
+                    <span className="text-lg">{skill.icon}</span>
                     <span>{skill.name}</span>
                   </div>
                 ))}
